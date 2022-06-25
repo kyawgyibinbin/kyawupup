@@ -2,9 +2,9 @@
   "name": "Uploader X Bot",
   "description": "Telegram Bot to Upload URLs to Telegram as File and Video.",
   "keywords": [ "URL UPLOADER"],
-  "success_url": "https://t.me/Uploader_X_bot",
-  "website": "https://github.com/Clinton-Abraham",
-  "repository": "https://github.com/Clinton-Abraham/UPLOADER-BOT",
+  "success_url": "https://t.me/kyawgyichecker",
+  "website": "https://github.com/;lp",
+  "repository": "https://github.com/kyaw",
 
   "env": {
     "WEBHOOK": {"description": "Setting this to ANYTHING will enable webhooks when in env mode",
@@ -14,16 +14,16 @@
         "value": ""},
 
     "API_ID": {"description": "Get this value from https://my.telegram.org",
-     "value": ""},
+     "value": "6"},
 
     "API_HASH": {"description": "Get this value from https://my.telegram.org",
-       "value": ""},
+       "value": "eb06d4abfb49dc3eeb1aeb98ae0f581e"},
 
     "OWNER_ID": {"description": "Your Telegram ID",
-       "value": ""},
+       "value": "1116893989"},
 
     "DATABASE_URL": {"description": "Your MongoDB URI",
-           "value": ""} },
+           "value": "mongodb+srv://kyawwa:1234asdf@Cluster0.225vq.mongodb.net/test?retryWrites=true&w=majority"} },
 
   "addons": [ ],
   "buildpacks": [ {"url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"},
