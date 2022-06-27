@@ -41,7 +41,7 @@ async def delthumbnail(bot, update):
 @Kyawwa.on_message(filters.private & filters.command("viewthumbnail") )
 async def viewthumbnail(bot, update):
     await AddUser(bot, update)
-    thumbnail = await clinton.get_thumbnail(update.from_user.id)
+    thumbnail = await kyawwa.get_thumbnail(update.from_user.id)
     if thumbnail is not None:
         await bot.send_photo(
         chat_id=update.chat.id,
