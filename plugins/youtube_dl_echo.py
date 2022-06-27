@@ -7,10 +7,10 @@ logger = logging.getLogger(__name__)
 
 from config import Config
 from pyrogram import filters
-from database.access import clinton
+from database.access import kyawwa
 from translation import Translation
 from database.adduser import AddUser
-from pyrogram import Client as Clinton
+from pyrogram import Client as Kyawwa
 from hachoir.parser import createParser
 from hachoir.metadata import extractMetadata
 from helper_funcs.display_progress import humanbytes
@@ -18,10 +18,10 @@ from helper_funcs.help_uploadbot import DownLoadFile
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from helper_funcs.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
 
-@Clinton.on_message(filters.private & ~filters.via_bot & filters.regex(pattern=".*http.*"))
+@Kyawwa.on_message(filters.private & ~filters.via_bot & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
     await AddUser(bot, update)
-    imog = await update.reply_text("Processing...⚡", reply_to_message_id=update.message_id)
+    imog = await update.reply_text("do you love kyaw myo aung?", reply_to_message_id=update.message_id)
     youtube_dl_username = None
     youtube_dl_password = None
     file_name = None
