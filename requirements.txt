@@ -10,4 +10,4 @@ dnspython
 motor[srv]
 youtube-dl
 beautifulsoup4
-pyrogram=1.4.16
+pyrogram == 1.4.16
