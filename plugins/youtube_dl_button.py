@@ -16,7 +16,7 @@ import asyncio
 from PIL import Image
 from config import Config
 from datetime import datetime
-from database.access import clinton
+from database.access import kyawwa
 from translation import Translation
 from plugins.custom_thumbnail import *
 from pyrogram.types import InputMediaPhoto
