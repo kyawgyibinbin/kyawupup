@@ -16,13 +16,13 @@ from translation import Translation
 
 from pyrogram import filters
 from database.adduser import AddUser
-from pyrogram import Client as Clinton
+from pyrogram import Client as Kyawwa
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
-@Clinton.on_message(filters.private & filters.command(["help"]))
+@Kyawwa.on_message(filters.private & filters.command(["help"]))
 async def help_user(bot, update):
     # logger.info(update)
     await AddUser(bot, update)
@@ -35,7 +35,7 @@ async def help_user(bot, update):
     )
 
 
-@Clinton.on_message(filters.private & filters.command(["start"]))
+@Kyawwa.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
     # logger.info(update)
     await AddUser(bot, update)
