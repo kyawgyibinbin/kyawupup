@@ -1,5 +1,5 @@
 class Translation(object):
-    START_TEXT = """Hi {fullname},
+    START_TEXT = """Hi {},
 I'm uploader!
 You can upload HTTP/HTTPS direct link, Using this bot!
 
