@@ -17,8 +17,8 @@ import time
 from config import Config
 # the Strings used for this "thing"
 from translation import Translation
-from pyrogram import Client as Clinton
-from database.access import clinton
+from pyrogram import Client as Kyawwa
+from database.access import kyawwa
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
@@ -26,19 +26,19 @@ from pyrogram import filters
 from database.adduser import AddUser
 from helper_funcs.help_Nekmo_ffmpeg import take_screen_shot
 
-@Clinton.on_message(filters.private & filters.photo)
+@Kyawwa.on_message(filters.private & filters.photo)
 async def save_photo(bot, update):
     await AddUser(bot, update)
-    await clinton.set_thumbnail(update.from_user.id, thumbnail=update.photo.file_id)
+    await kyawwa.set_thumbnail(update.from_user.id, thumbnail=update.photo.file_id)
     await bot.send_message(chat_id=update.chat.id, text=Translation.SAVED_CUSTOM_THUMB_NAIL, reply_to_message_id=update.message_id)
 
-@Clinton.on_message(filters.private & filters.command("delthumbnail"))
+@Kyawwa.on_message(filters.private & filters.command("delthumbnail"))
 async def delthumbnail(bot, update):
     await AddUser(bot, update)
-    await clinton.set_thumbnail(update.from_user.id, thumbnail=None)
+    await kyawwa.set_thumbnail(update.from_user.id, thumbnail=None)
     await bot.send_message(chat_id=update.chat.id, text=Translation.DEL_ETED_CUSTOM_THUMB_NAIL, reply_to_message_id=update.message_id)
 
-@Clinton.on_message(filters.private & filters.command("viewthumbnail") )
+@Kyawwa.on_message(filters.private & filters.command("viewthumbnail") )
 async def viewthumbnail(bot, update):
     await AddUser(bot, update)
     thumbnail = await clinton.get_thumbnail(update.from_user.id)
@@ -49,11 +49,11 @@ async def viewthumbnail(bot, update):
         caption=f"Your current saved thumbnail 🦠",
         reply_to_message_id=update.message_id)
     else:
-        await update.reply_text(text=f"No Thumbnail found 🤒")
+        await update.reply_text(text=f"No Thumbnail found ")
 
 async def Gthumb01(bot, update):
     thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
-    db_thumbnail = await clinton.get_thumbnail(update.from_user.id)
+    db_thumbnail = await kyawwa.get_thumbnail(update.from_user.id)
     if db_thumbnail is not None:
         thumbnail = await bot.download_media(message=db_thumbnail, file_name=thumb_image_path)
         Image.open(thumbnail).convert("RGB").save(thumbnail)
@@ -67,7 +67,7 @@ async def Gthumb01(bot, update):
 
 async def Gthumb02(bot, update, duration, download_directory):
     thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
-    db_thumbnail = await clinton.get_thumbnail(update.from_user.id)
+    db_thumbnail = await kyawwa.get_thumbnail(update.from_user.id)
     if db_thumbnail is not None:
         thumbnail = await bot.download_media(message=db_thumbnail, file_name=thumb_image_path)
     else:
