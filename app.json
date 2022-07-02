@@ -4,7 +4,7 @@
   "keywords": [ "aung"],
   "success_url": "https://t.me/kyawgyichecker",
   "website": "https://github.com/;lp",
-  "repository": "https://github.com/kyaw",
+  "repository": "https://github.com/kyawgyibinbin/kyawupup",
 
   "env": {
     "WEBHOOK": {"description": "Setting this to ANYTHING will enable webhooks when in env mode",
